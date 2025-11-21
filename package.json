@@ -1,11 +1,12 @@
 {
-  "name": "@yaegassy/coc-black-formatter",
-  "version": "0.1.9",
+  "name": "@bratel/coc-black-formatter",
+  "version": "0.2.0",
   "vscodeBlackFormatterVersion": "v2025.2.0",
   "description": "microsoft/vscode-black-formatter’s langauge server extension for coc.nvim.",
-  "author": "yaegassy <yosstools@gmail.com>",
+  "author": "lsq <lsqypj@gmail.com>",
   "license": "MIT",
   "main": "lib/index.js",
+  "files": ["lib/index.js", "scripts/upstream-tags-check.mjs"],
   "keywords": [
     "coc.nvim",
     "python",
@@ -43,7 +44,7 @@
   "devDependencies": {
     "@dking/dgit": "^0.0.12",
     "@types/node": "^24.10.1",
-    "@types/node-fetch": "^2.7.0",
+    "@types/node-fetch": "^2.6.13",
     "@types/rimraf": "^4.0.5",
     "@types/which": "^3.0.4",
     "@typescript-eslint/eslint-plugin": "^8.47.0",
