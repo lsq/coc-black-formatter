@@ -41,24 +41,25 @@
     "semi": true
   },
   "devDependencies": {
-    "@types/node": "^18.17.2",
-    "@types/node-fetch": "^2.6.2",
-    "@types/rimraf": "^3.0.2",
-    "@types/which": "^2.0.1",
-    "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
-    "coc.nvim": "^0.0.82",
-    "esbuild": "^0.16.17",
-    "eslint": "^8.46.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
+    "@dking/dgit": "^0.0.12",
+    "@types/node": "^24.10.1",
+    "@types/node-fetch": "^2.7.0",
+    "@types/rimraf": "^4.0.5",
+    "@types/which": "^3.0.4",
+    "@typescript-eslint/eslint-plugin": "^8.47.0",
+    "@typescript-eslint/parser": "^8.47.0",
+    "coc.nvim": "^0.0.83-next.19",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.39.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
     "extract-zip": "^2.0.1",
-    "https-proxy-agent": "^5.0.1",
-    "node-fetch": "^2.6.7",
-    "prettier": "^2.8.8",
-    "rimraf": "^3.0.2",
-    "typescript": "^5.1.6",
-    "which": "^3.0.0"
+    "https-proxy-agent": "^7.0.6",
+    "node-fetch": "^2.7.0",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.1.2",
+    "typescript": "^5.7.3",
+    "which": "^6.0.0"
   },
   "activationEvents": [
     "onLanguage:python"
@@ -90,6 +91,11 @@
         "black-formatter.useDetectBlackCommand": {
           "type": "boolean",
           "default": true,
+          "description": "Automatically detects the black command in the execution environment and sets `black-formatter.path`."
+        },
+        "black-formatter.useGlobalCommand": {
+          "type": "boolean",
+          "default": false,
           "description": "Automatically detects the black command in the execution environment and sets `black-formatter.path`."
         },
         "black-formatter.builtin.pythonPath": {
@@ -207,6 +213,5 @@
       }
     ]
   },
-  "dependencies": {},
   "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }

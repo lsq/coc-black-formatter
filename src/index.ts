@@ -8,7 +8,7 @@ import * as restartCommandFeature from './commands/restart';
 import * as showOutputCommandFeature from './commands/showOutput';
 import * as versionCommandFeature from './commands/version';
 import { EXTENSION_NS } from './constant';
-import { getBlackLspBlackPath } from './tool';
+import { getBlackLspBlackPath, getBlackLspServerScriptPath } from './tool';
 
 let client: LanguageClient | undefined;
 
@@ -21,8 +21,9 @@ export async function activate(context: ExtensionContext): Promise<void> {
   }
 
   const blackLspBlackCommandPath = getBlackLspBlackPath(context);
+  const blackLspServerScriptPath = getBlackLspServerScriptPath(context);
 
-  if (!blackLspBlackCommandPath) {
+  if (!blackLspBlackCommandPath || !blackLspServerScriptPath) {
     installServerCommandFeature.register(context, client);
     window.showWarningMessage(
       `coc-black-formatter | black-formatter language server does not exist. please execute ":CocCommand ${EXTENSION_NS}.installServer"`
@@ -32,7 +33,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
 
   client = createLanguageClient(context);
   if (!client) return;
-  context.subscriptions.push(services.registLanguageClient(client));
+  context.subscriptions.push(services.registerLanguageClient(client));
 
   installServerCommandFeature.register(context, client);
   restartCommandFeature.register(context, client);
