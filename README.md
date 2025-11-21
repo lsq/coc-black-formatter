@@ -69,8 +69,9 @@ If [coc-black-formatter](https://github.com/yaegassy/coc-black-formatter) and `c
 
 - `black-formatter.enable`: Enable coc-black-formatter extension, default: `true`
 - `black-formatter.useDetectBlackCommand`: Automatically detects the black command in the execution environment and sets `black-formatter.path`, default: `true`
-- `black-formatter.useGlobalCommand`: Automatically detects the black command with npm installed in the system and sets `black-formatter.path`. When the language server script not found in plugin data directory, coc.nvim will show a message for you to download only langauge server files. default: `false`
-- `black-formatter.builtin.pythonPath`: Python 3.x path (Absolute path) to be used for built-in install, default: `""`
+- `black-formatter.useGlobalCommand`: Use the black command with npm installed in the system and sets `black-formatter.path`, donot install python modules `pygls` and `packaging`. When the language server script not found in plugin data directory, coc.nvim will show a message for you to download only langauge server files. default: `false`
+- `black-formatter.useBuiltInLspServer`: Use black Format language server with this extension. default: `false`
+- `black-formatter.builtin.pythonPath`: Python 3.x path (Absolute path) to be used for built-in install, default: `"`
 - `black-formatter.trace.server`: Traces the communication between coc.nvim and the language server, default: `"off"`
 
 Other settings have the same configuration as [microsoft/vscode-black-formatter](https://github.com/microsoft/vscode-black-formatter).

@@ -1,12 +1,16 @@
 {
   "name": "@bratel/coc-black-formatter",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "vscodeBlackFormatterVersion": "v2025.2.0",
   "description": "microsoft/vscode-black-formatter’s langauge server extension for coc.nvim.",
   "author": "lsq <lsqypj@gmail.com>",
   "license": "MIT",
   "main": "lib/index.js",
-  "files": ["lib/index.js", "scripts/upstream-tags-check.mjs"],
+  "files": [
+    "lib/index.js",
+    "server",
+    "scripts/upstream-tags-check.mjs"
+  ],
   "keywords": [
     "coc.nvim",
     "python",
