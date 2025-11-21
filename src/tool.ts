@@ -36,10 +36,16 @@ function getVenvExecutable(context: ExtensionContext, executableName: string): s
 // 构建捆绑资源中的文件路径
 function getBundledFilePath(context: ExtensionContext, ...segments: string[]): string | undefined {
   const useGlob = workspace.getConfiguration(EXTENSION_NS).get<string>('useGlobalCommand');
+  const useBuiltInServer = workspace.getConfiguration(EXTENSION_NS).get<string>('useBuiltInLspServer');
+  if (useBuiltInServer) {
+    return path.join(context.asAbsolutePath('./server'), ...segments);
+  }
+
   const fullPath = path.join(
     context.storagePath,
     `vscode-black-formatter${useGlob ? '.only_lsp' : ''}`,
     'bundled',
+    'tool',
     ...segments,
   );
   return fs.existsSync(fullPath) ? fullPath : undefined;
@@ -55,5 +61,5 @@ export function getBlackLspServerInterpreterPath(context: ExtensionContext): str
 }
 
 export function getBlackLspServerScriptPath(context: ExtensionContext): string | undefined {
-  return getBundledFilePath(context, 'tool', 'lsp_server.py');
+  return getBundledFilePath(context, 'lsp_server.py');
 }
