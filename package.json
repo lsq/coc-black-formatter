@@ -1,7 +1,7 @@
 {
   "name": "@bratel/coc-black-formatter",
-  "version": "0.2.0",
-  "vscodeBlackFormatterVersion": "v2026.4.0",
+  "version": "0.2.1",
+  "vscodeBlackFormatterVersion": "v2025.2.0",
   "description": "microsoft/vscode-black-formatter’s langauge server extension for coc.nvim.",
   "author": "lsq <lsqypj@gmail.com>",
   "license": "MIT",
