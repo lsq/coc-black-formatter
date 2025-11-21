@@ -1,6 +1,6 @@
 {
   "name": "@bratel/coc-black-formatter",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "vscodeBlackFormatterVersion": "v2025.2.0",
   "description": "microsoft/vscode-black-formatter’s langauge server extension for coc.nvim.",
   "author": "lsq <lsqypj@gmail.com>",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yaegassy/coc-black-formatter"
+    "url": "https://github.com/lsq/coc-black-formatter"
   },
   "publishConfig": {
     "access": "public"
@@ -98,6 +98,11 @@
           "type": "boolean",
           "default": false,
           "description": "Automatically detects the black command in the execution environment and sets `black-formatter.path`."
+        },
+        "black-formatter.useBuiltInLspServer": {
+          "type": "boolean",
+          "default": false,
+          "description": "Use builtin lsp server and donot download from microsoft-vscode-black-formatter repository."
         },
         "black-formatter.builtin.pythonPath": {
           "type": "string",

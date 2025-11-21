@@ -7,10 +7,10 @@ import { getBlackLspBlackPath, getBlackLspServerInterpreterPath, getBlackLspServ
 
 export function createLanguageClient(context: ExtensionContext) {
   const devServerInterpreter = workspace.expand(
-    workspace.getConfiguration(EXTENSION_NS).get<string>('dev.serverInterpreter', '')
+    workspace.getConfiguration(EXTENSION_NS).get<string>('dev.serverInterpreter', ''),
   );
   const devServerScript = workspace.expand(
-    workspace.getConfiguration(EXTENSION_NS).get<string>('dev.serverScript', '')
+    workspace.getConfiguration(EXTENSION_NS).get<string>('dev.serverScript', ''),
   );
 
   const serverInterpreter = devServerInterpreter ? devServerInterpreter : getBlackLspServerInterpreterPath(context);
