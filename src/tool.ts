@@ -3,70 +3,57 @@ import { ExtensionContext, workspace } from 'coc.nvim';
 import fs from 'fs';
 import path from 'path';
 import which from 'which';
-
 import { EXTENSION_NS } from './constant';
 
+// 获取配置或系统中的 Python 路径
 export function getPythonPath(): string {
   let pythonPath = workspace.getConfiguration(EXTENSION_NS).get<string>('builtin.pythonPath', '');
-  if (pythonPath) {
-    return pythonPath;
-  }
+  if (pythonPath) return fs.realpathSync(pythonPath);
 
-  pythonPath = which.sync('python3', { nothrow: true }) || '';
-  if (pythonPath) {
-    pythonPath = fs.realpathSync(pythonPath);
-    return pythonPath;
-  }
-
-  pythonPath = which.sync('python', { nothrow: true }) || '';
-  if (pythonPath) {
-    pythonPath = fs.realpathSync(pythonPath);
-    return pythonPath;
-  }
-
-  return pythonPath;
+  pythonPath = which.sync('python3', { nothrow: true }) || which.sync('python', { nothrow: true }) || '';
+  return pythonPath ? fs.realpathSync(pythonPath) : '';
 }
 
-export function getBlackLspBlackPath(context: ExtensionContext) {
-  let toolPath: string | undefined = undefined;
+// 构建虚拟环境中的可执行文件路径（自动适配平台）
+function getVenvExecutable(context: ExtensionContext, executableName: string): string | undefined {
+  if (workspace.getConfiguration(EXTENSION_NS).get<string>('useGlobalCommand')) {
+    const globPath =
+      which.sync(executableName, { nothrow: true }) || which.sync(`${executableName}.exe`, { nothrow: true }) || '';
+    return globPath ? fs.realpathSync(globPath) : '';
+  } else {
+    const venvBase = path.join(context.storagePath, 'vscode-black-formatter', 'venv');
+    const binDir =
+      process.platform === 'win32' && !process?.report?.getReport?.()?.header?.osName.startsWith('MINGW')
+        ? 'Scripts'
+        : 'bin';
+    const ext = process.platform === 'win32' ? '.exe' : '';
 
-  if (
-    fs.existsSync(path.join(context.storagePath, 'vscode-black-formatter', 'venv', 'Scripts', 'black.exe')) ||
-    fs.existsSync(path.join(context.storagePath, 'vscode-black-formatter', 'venv', 'bin', 'black'))
-  ) {
-    if (process.platform === 'win32') {
-      toolPath = path.join(context.storagePath, 'vscode-black-formatter', 'venv', 'Scripts', 'black.exe');
-    } else {
-      toolPath = path.join(context.storagePath, 'vscode-black-formatter', 'venv', 'bin', 'black');
-    }
+    const fullPath = path.join(venvBase, binDir, `${executableName}${ext}`);
+    return fs.existsSync(fullPath) ? fullPath : undefined;
   }
-
-  return toolPath;
 }
 
-export function getBlackLspServerInterpreterPath(context: ExtensionContext) {
-  let pythonCommandPath: string | undefined = undefined;
-
-  if (
-    fs.existsSync(path.join(context.storagePath, 'vscode-black-formatter', 'venv', 'Scripts', 'python.exe')) ||
-    fs.existsSync(path.join(context.storagePath, 'vscode-black-formatter', 'venv', 'bin', 'python'))
-  ) {
-    if (process.platform === 'win32') {
-      pythonCommandPath = path.join(context.storagePath, 'vscode-black-formatter', 'venv', 'Scripts', 'python.exe');
-    } else {
-      pythonCommandPath = path.join(context.storagePath, 'vscode-black-formatter', 'venv', 'bin', 'python');
-    }
-  }
-
-  return pythonCommandPath;
+// 构建捆绑资源中的文件路径
+function getBundledFilePath(context: ExtensionContext, ...segments: string[]): string | undefined {
+  const useGlob = workspace.getConfiguration(EXTENSION_NS).get<string>('useGlobalCommand');
+  const fullPath = path.join(
+    context.storagePath,
+    `vscode-black-formatter${useGlob ? '.only_lsp' : ''}`,
+    'bundled',
+    ...segments,
+  );
+  return fs.existsSync(fullPath) ? fullPath : undefined;
 }
 
-export function getBlackLspServerScriptPath(context: ExtensionContext) {
-  let serverScriptPath: string | undefined = undefined;
+// 导出的公共接口
+export function getBlackLspBlackPath(context: ExtensionContext): string | undefined {
+  return getVenvExecutable(context, 'black');
+}
 
-  if (fs.existsSync(path.join(context.storagePath, 'vscode-black-formatter', 'bundled', 'tool', 'lsp_server.py'))) {
-    serverScriptPath = path.join(context.storagePath, 'vscode-black-formatter', 'bundled', 'tool', 'lsp_server.py');
-  }
+export function getBlackLspServerInterpreterPath(context: ExtensionContext): string | undefined {
+  return getVenvExecutable(context, 'python');
+}
 
-  return serverScriptPath;
+export function getBlackLspServerScriptPath(context: ExtensionContext): string | undefined {
+  return getBundledFilePath(context, 'tool', 'lsp_server.py');
 }
