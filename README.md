@@ -1,3 +1,4 @@
+[![release](https://github.com/lsq/coc-black-formatter/actions/workflows/release.yml/badge.svg)](https://github.com/lsq/coc-black-formatter/actions/workflows/release.yml)
 # coc-black-formatter
 
 [microsoft/vscode-black-formatter](https://github.com/microsoft/vscode-black-formatter)'s langauge server extension for [coc.nvim](https://github.com/neoclide/coc.nvim).
@@ -7,7 +8,7 @@
 **CocInstall**:
 
 ```
-:CocInstall @yaegassy/coc-black-formatter
+:CocInstall @bratel/coc-black-formatter
 ```
 
 **When using a plugin manager, etc**:
@@ -15,7 +16,7 @@
 > e.g. vim-plug
 
 ```vim
-Plug 'yaegassy/coc-black-formatter', {'do': 'yarn install --frozen-lockfile'}
+Plug 'lsq/coc-black-formatter', {'do': 'yarn install --frozen-lockfile'}
 ```
 
 ## Server Install
@@ -68,6 +69,7 @@ If [coc-black-formatter](https://github.com/yaegassy/coc-black-formatter) and `c
 
 - `black-formatter.enable`: Enable coc-black-formatter extension, default: `true`
 - `black-formatter.useDetectBlackCommand`: Automatically detects the black command in the execution environment and sets `black-formatter.path`, default: `true`
+- `black-formatter.useGlobalCommand`: Automatically detects the black command with npm installed in the system and sets `black-formatter.path`. When the language server script not found in plugin data directory, coc.nvim will show a message for you to download only langauge server files. default: `false`
 - `black-formatter.builtin.pythonPath`: Python 3.x path (Absolute path) to be used for built-in install, default: `""`
 - `black-formatter.trace.server`: Traces the communication between coc.nvim and the language server, default: `"off"`
 
