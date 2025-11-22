@@ -23,9 +23,9 @@ def update_sys_path(path_to_add: str, strategy: str) -> None:
 
 
 # Ensure that we can import LSP libraries, and other bundled libraries.
-BUNDLE_DIR = pathlib.Path(__file__).parent.parent
+BUNDLE_DIR = pathlib.Path(__file__).parent
 # Always use bundled server files.
-update_sys_path(os.fspath(BUNDLE_DIR / "tool"), "useBundled")
+update_sys_path(os.fspath(BUNDLE_DIR ), "useBundled")
 update_sys_path(
     os.fspath(BUNDLE_DIR / "libs"),
     os.getenv("LS_IMPORT_STRATEGY", "useBundled"),

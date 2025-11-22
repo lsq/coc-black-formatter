@@ -36,8 +36,8 @@ function getVenvExecutable(context: ExtensionContext, executableName: string): s
 // 构建捆绑资源中的文件路径
 function getBundledFilePath(context: ExtensionContext, ...segments: string[]): string | undefined {
   const useGlob = workspace.getConfiguration(EXTENSION_NS).get<string>('useGlobalCommand');
-  const useBuiltInServer = workspace.getConfiguration(EXTENSION_NS).get<string>('useBuiltInLspServer');
-  if (useBuiltInServer) {
+  const useBuiltInServer = workspace.getConfiguration(EXTENSION_NS).get<string>('importStrategy');
+  if (useBuiltInServer === 'useBundled') {
     return path.join(context.asAbsolutePath('./server'), ...segments);
   }
 
