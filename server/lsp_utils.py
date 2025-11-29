@@ -13,6 +13,7 @@ import subprocess
 import sys
 import sysconfig
 import threading
+# import re
 from typing import Any, Callable, List, Sequence, Tuple, Union
 
 # Save the working directory used when loading this module
@@ -65,10 +66,48 @@ def is_same_path(file_path1: str, file_path2: str) -> bool:
     """Returns true if two paths are the same."""
     return pathlib.Path(file_path1) == pathlib.Path(file_path2)
 
+def win_path_to_posix(path: str) -> str:
+    """
+    自动识别并转换 Windows 带盘符路径为 POSIX 格式（如 D:/tmp → /d/tmp），
+    非 Windows 路径原样返回。
+    """
+    # print(type(path))
+    if not isinstance(path, str):
+        return path
+    if not sys.platform.startswith('cygwin'):
+        # print("not cygwin")
+        return path
+
+    # 快速判断：是否以 "X:\" 或 "X:/" 开头（X 为字母）
+    # 快速初步检查：长度至少3，且第2个字符是 ':'，第3个是 '/' 或 '\\'
+    # 例如: "C:/", "d:\\"
+    if len(path) < 3 or path[1] != ':' or path[2] not in ('/', '\\'):
+        return path
+    # 检查第一个字符是否为字母（A-Z, a-z）
+    if not path[0].isalpha():
+        return path
+    # if not re.match(r'^[a-zA-Z]:[/\\]', path):
+        # return path
+
+    try:
+        p = pathlib.PureWindowsPath(path)
+        if not p.drive or not p.is_absolute():
+            return path
+
+        drive_letter = p.drive.rstrip(':').lower()
+        rel_parts = p.parts[1:]  # 跳过第一个元素（如 'D:\\'）
+
+        # 构造 POSIX 路径
+        posix_path = pathlib.PurePosixPath('/') / drive_letter / pathlib.PurePosixPath(*rel_parts)
+        return str(posix_path)
+
+    except Exception:
+        # 出错时保守返回原路径
+        return path
 
 def normalize_path(file_path: str) -> str:
     """Returns normalized path."""
-    return str(pathlib.Path(file_path).resolve())
+    return str(pathlib.Path(win_path_to_posix(str(file_path))).resolve())
 
 
 def is_current_interpreter(executable) -> bool:
