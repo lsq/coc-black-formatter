@@ -31,7 +31,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
     return;
   }
 
-  client = createLanguageClient(context);
+  client = await createLanguageClient(context);
   if (!client) return;
   context.subscriptions.push(services.registerLanguageClient(client));
 

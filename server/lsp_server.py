@@ -315,10 +315,12 @@ def on_shutdown(_params: Optional[Any] = None) -> None:
 def _update_workspace_settings_with_version_info(
     workspace_settings: dict[str, Any],
 ) -> None:
+    log_to_output("update_version_info: beginning...")
     for settings in workspace_settings.values():
         try:
             from packaging.version import parse as parse_version
 
+            log_to_output(f'update_info - settings: {settings}')
             result = _run_tool(["--version"], copy.deepcopy(settings))
             code_workspace = settings["workspaceFS"]
             log_to_output(
@@ -412,12 +414,18 @@ def _get_settings_by_path(file_path: pathlib.Path):
 
 def _get_document_key(document: workspace.Document):
     if WORKSPACE_SETTINGS:
+        # log_to_output(f'_get_document_key: WORKSPACE_SETTINGS: {WORKSPACE_SETTINGS}')
+        # log_to_output(f'_get_document_key: document.path: {document.path}')
         document_workspace = pathlib.Path(document.path)
+        # log_to_output(f'_get_document_key: document_workspace: { document_workspace}')
         workspaces = {s["workspaceFS"] for s in WORKSPACE_SETTINGS.values()}
+        # log_to_output(f'_get_document_key: workspaces: { workspaces}')
 
         # Find workspace settings for the given file.
         while document_workspace != document_workspace.parent:
+            # log_to_output(f'_get_document_key: document_workspace.parent : {document_workspace.parent}')
             norm_path = utils.normalize_path(document_workspace)
+            # log_to_output(f'_get_document_key:norm_path : {norm_path}')
             if norm_path in workspaces:
                 return norm_path
             document_workspace = document_workspace.parent
@@ -448,14 +456,21 @@ def _get_settings_by_document(document: workspace.Document | None):
 # *****************************************************
 def get_cwd(settings: Dict[str, Any], document: Optional[workspace.Document]) -> str:
     """Returns cwd for the given settings and document."""
+    log_to_output(f'setting: {settings}')
+    log_to_output(f'setting-cwd: {settings["cwd"]}')
+    log_to_output(f'setting-workspaceFS: {settings["workspaceFS"]}')
+    # log_to_output(f'workspaceFolder: ${workspaceFolder}')
+    # log_to_output(f'fileDirname: ${fileDirname}')
     if settings["cwd"] == "${workspaceFolder}":
         return settings["workspaceFS"]
 
     if settings["cwd"] == "${fileDirname}":
         if document is not None:
+            log_to_output(f'document.path: {document.path}')
             return os.fspath(pathlib.Path(document.path).parent)
         return settings["workspaceFS"]
 
+    log_to_output(f'get_cwd: return setting["cwd"]')
     return settings["cwd"]
 
 
@@ -481,7 +496,9 @@ def _run_tool_on_document(
         return None
 
     # deep copy here to prevent accidentally updating global settings.
+    log_to_output(f'_run_tool_on_document: document: {document}')
     settings = copy.deepcopy(_get_settings_by_document(document))
+    log_to_output(f'_run_tool_on_document: settings: {settings}')
 
     code_workspace = settings["workspaceFS"]
     cwd = get_cwd(settings, document)
@@ -511,8 +528,9 @@ def _run_tool_on_document(
 
     if use_path:
         # This mode is used when running executables.
-        log_to_output(" ".join(argv))
+        log_to_output(f'argv: {" ".join(argv)}')
         log_to_output(f"CWD Server: {cwd}")
+        log_to_output(f"source: {document.source}")
         result = utils.run_path(
             argv=argv,
             use_stdin=use_stdin,
