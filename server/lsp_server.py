@@ -456,9 +456,9 @@ def _get_settings_by_document(document: workspace.Document | None):
 # *****************************************************
 def get_cwd(settings: Dict[str, Any], document: Optional[workspace.Document]) -> str:
     """Returns cwd for the given settings and document."""
-    log_to_output(f'setting: {settings}')
-    log_to_output(f'setting-cwd: {settings["cwd"]}')
-    log_to_output(f'setting-workspaceFS: {settings["workspaceFS"]}')
+    # log_to_output(f'setting: {settings}')
+    # log_to_output(f'setting-cwd: {settings["cwd"]}')
+    # log_to_output(f'setting-workspaceFS: {settings["workspaceFS"]}')
     # log_to_output(f'workspaceFolder: ${workspaceFolder}')
     # log_to_output(f'fileDirname: ${fileDirname}')
     if settings["cwd"] == "${workspaceFolder}":
@@ -466,11 +466,11 @@ def get_cwd(settings: Dict[str, Any], document: Optional[workspace.Document]) ->
 
     if settings["cwd"] == "${fileDirname}":
         if document is not None:
-            log_to_output(f'document.path: {document.path}')
+            # log_to_output(f'document.path: {document.path}')
             return os.fspath(pathlib.Path(document.path).parent)
         return settings["workspaceFS"]
 
-    log_to_output(f'get_cwd: return setting["cwd"]')
+    # log_to_output(f'get_cwd: return setting["cwd"]')
     return settings["cwd"]
 
 
@@ -496,9 +496,9 @@ def _run_tool_on_document(
         return None
 
     # deep copy here to prevent accidentally updating global settings.
-    log_to_output(f'_run_tool_on_document: document: {document}')
+    # log_to_output(f'_run_tool_on_document: document: {document}')
     settings = copy.deepcopy(_get_settings_by_document(document))
-    log_to_output(f'_run_tool_on_document: settings: {settings}')
+    # log_to_output(f'_run_tool_on_document: settings: {settings}')
 
     code_workspace = settings["workspaceFS"]
     cwd = get_cwd(settings, document)
@@ -528,9 +528,9 @@ def _run_tool_on_document(
 
     if use_path:
         # This mode is used when running executables.
-        log_to_output(f'argv: {" ".join(argv)}')
-        log_to_output(f"CWD Server: {cwd}")
-        log_to_output(f"source: {document.source}")
+        # log_to_output(f'argv: {" ".join(argv)}')
+        # log_to_output(f"CWD Server: {cwd}")
+        # log_to_output(f"source: {document.source}")
         result = utils.run_path(
             argv=argv,
             use_stdin=use_stdin,
