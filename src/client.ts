@@ -1,9 +1,6 @@
 import { ExtensionContext, LanguageClient, LanguageClientOptions, ServerOptions, workspace, Uri } from 'coc.nvim';
-
-import which from 'which';
-
 import { EXTENSION_NS } from './constant';
-import { getBlackLspBlackPath, getBlackLspServerInterpreterPath, getBlackLspServerScriptPath, getScriptPathForPython } from './tool';
+import { getBlackLspBlackPath, getBlackLspServerInterpreterPath, getBlackLspServerScriptPath, isMsys2Python, toMsys2Path} from './tool';
 
 export async function createLanguageClient(context: ExtensionContext) {
   const devServerInterpreter = workspace.expand(
@@ -16,14 +13,18 @@ export async function createLanguageClient(context: ExtensionContext) {
   const serverInterpreter = devServerInterpreter ? devServerInterpreter : getBlackLspServerInterpreterPath(context);
   const serverScript = devServerScript ? devServerScript : getBlackLspServerScriptPath(context);
   if (!serverInterpreter || !serverScript) return;
-  const finalServerScript = await getScriptPathForPython(serverInterpreter, serverScript)
+
+  const isMsys = await isMsys2Python(serverInterpreter)
+  const normalizePath = (p: string): string => isMsys ? toMsys2Path(p) : require('path').resolve(p)
+
+  const finalServerScript = normalizePath(serverScript)
 
   const serverOptions: ServerOptions = {
     command: serverInterpreter,
     args: [finalServerScript],
   };
 
-  const initializationOptions = await getInitializationOptions(context);
+  const initializationOptions = await getInitializationOptions(context, serverInterpreter, normalizePath);
 
   const clientOptions: LanguageClientOptions = {
     synchronize: {
@@ -71,13 +72,16 @@ function convertFromWorkspaceConfigToInitializationOptions() {
   return initializationOptions;
 }
 
-async function getInitializationOptions(context: ExtensionContext) {
+async function getInitializationOptions(context: ExtensionContext, serverInterpreter: string, normalizePath: (p:string) => string) {
   const initializationOptions = convertFromWorkspaceConfigToInitializationOptions();
 
   if (workspace.getConfiguration(EXTENSION_NS).get<boolean>('useDetectBlackCommand')) {
     if (initializationOptions.globalSettings.path.length === 0) {
-      const envToolCommandPath = await getScriptPathForPython(getBlackLspServerInterpreterPath(context), getBlackLspBlackPath(context)!);
-      initializationOptions.globalSettings.path = [envToolCommandPath];
+      const blackPath = getBlackLspBlackPath(context);
+      if (blackPath) {
+          const normalizeBlackPath = normalizePath(blackPath)
+          initializationOptions.globalSettings.path = [normalizeBlackPath];
+      }
     }
   }
 
