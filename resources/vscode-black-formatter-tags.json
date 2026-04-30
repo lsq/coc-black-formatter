@@ -1,5 +1,225 @@
 [
   {
+    "name": "v2026.5.11171008",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.5.11171008",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.5.11171008",
+    "commit": {
+      "sha": "2258be68eb71b4307dc54ec18dce5f25ccdedaa0",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/2258be68eb71b4307dc54ec18dce5f25ccdedaa0"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuNS4xMTE3MTAwOA"
+  },
+  {
+    "name": "v2026.5.11141008",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.5.11141008",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.5.11141008",
+    "commit": {
+      "sha": "9c26fd22f1b774ed61e2f46c00760c8db1d83f9e",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/9c26fd22f1b774ed61e2f46c00760c8db1d83f9e"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuNS4xMTE0MTAwOA"
+  },
+  {
+    "name": "v2026.5.11131009",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.5.11131009",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.5.11131009",
+    "commit": {
+      "sha": "dc239e03ad4cd6beb7304690d6213d7ada7d52c6",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/dc239e03ad4cd6beb7304690d6213d7ada7d52c6"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuNS4xMTEzMTAwOQ"
+  },
+  {
+    "name": "v2026.4.0",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.4.0",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.4.0",
+    "commit": {
+      "sha": "176821e783f209f0b6a384784199a7035863a1bc",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/176821e783f209f0b6a384784199a7035863a1bc"
+    },
+    "node_id": "REF_kwDOHIRw07NyZWZzL3RhZ3MvdjIwMjYuNC4w"
+  },
+  {
+    "name": "v2026.3.11061009",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.11061009",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.11061009",
+    "commit": {
+      "sha": "7e5c10e40adf9bca251e235ba92b79d447d5ac3e",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/7e5c10e40adf9bca251e235ba92b79d447d5ac3e"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMTA2MTAwOQ"
+  },
+  {
+    "name": "v2026.3.11041007",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.11041007",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.11041007",
+    "commit": {
+      "sha": "105f0fe705ab0f5d782fbfcde50b6356c277b961",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/105f0fe705ab0f5d782fbfcde50b6356c277b961"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMTA0MTAwNw"
+  },
+  {
+    "name": "v2026.3.11031006",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.11031006",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.11031006",
+    "commit": {
+      "sha": "36be740d830eb0bf6bb2051ebdda3b42953e8ac4",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/36be740d830eb0bf6bb2051ebdda3b42953e8ac4"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMTAzMTAwNg"
+  },
+  {
+    "name": "v2026.3.11001007",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.11001007",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.11001007",
+    "commit": {
+      "sha": "7f25d16e0e5adfd83b63ebc46b97c245b3dc14b4",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/7f25d16e0e5adfd83b63ebc46b97c245b3dc14b4"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMTAwMTAwNw"
+  },
+  {
+    "name": "v2026.3.10991003",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.10991003",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.10991003",
+    "commit": {
+      "sha": "fe57dab30f98e9e9345ac32361e793e13d00298e",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/fe57dab30f98e9e9345ac32361e793e13d00298e"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMDk5MTAwMw"
+  },
+  {
+    "name": "v2026.3.10981008",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.10981008",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.10981008",
+    "commit": {
+      "sha": "d9e12461386d5321fad4aed131685dbf7d1785e1",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/d9e12461386d5321fad4aed131685dbf7d1785e1"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMDk4MTAwOA"
+  },
+  {
+    "name": "v2026.3.10971008",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.10971008",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.10971008",
+    "commit": {
+      "sha": "0e5e7ba7ed5428f97cc93c9c6f9dceef8cd8ba8e",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/0e5e7ba7ed5428f97cc93c9c6f9dceef8cd8ba8e"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMDk3MTAwOA"
+  },
+  {
+    "name": "v2026.3.10921007",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.10921007",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.10921007",
+    "commit": {
+      "sha": "c56eeb210807702257132fc2b7cfd98a0e4e226a",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/c56eeb210807702257132fc2b7cfd98a0e4e226a"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMDkyMTAwNw"
+  },
+  {
+    "name": "v2026.3.10891003",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.10891003",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.10891003",
+    "commit": {
+      "sha": "390836619b834e8c1aaad35f3f0c2045329a025a",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/390836619b834e8c1aaad35f3f0c2045329a025a"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMDg5MTAwMw"
+  },
+  {
+    "name": "v2026.3.10851006",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.10851006",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.10851006",
+    "commit": {
+      "sha": "909ee85fc622ba8ebd984e2aa4166d434f3bd126",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/909ee85fc622ba8ebd984e2aa4166d434f3bd126"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMDg1MTAwNg"
+  },
+  {
+    "name": "v2026.3.10841007",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.10841007",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.10841007",
+    "commit": {
+      "sha": "909ee85fc622ba8ebd984e2aa4166d434f3bd126",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/909ee85fc622ba8ebd984e2aa4166d434f3bd126"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMDg0MTAwNw"
+  },
+  {
+    "name": "v2026.3.10831003",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.10831003",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.10831003",
+    "commit": {
+      "sha": "c47b64a304a4b3b7534ef117b4ad193a1a49072c",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/c47b64a304a4b3b7534ef117b4ad193a1a49072c"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMDgzMTAwMw"
+  },
+  {
+    "name": "v2026.3.10821737",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2026.3.10821737",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2026.3.10821737",
+    "commit": {
+      "sha": "c47b64a304a4b3b7534ef117b4ad193a1a49072c",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/c47b64a304a4b3b7534ef117b4ad193a1a49072c"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjYuMy4xMDgyMTczNw"
+  },
+  {
+    "name": "v2025.3.10821007",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2025.3.10821007",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2025.3.10821007",
+    "commit": {
+      "sha": "f8e9437ff72b97a617cae06d5c3eb2d207b08ae2",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/f8e9437ff72b97a617cae06d5c3eb2d207b08ae2"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjUuMy4xMDgyMTAwNw"
+  },
+  {
+    "name": "v2025.3.10771006",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2025.3.10771006",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2025.3.10771006",
+    "commit": {
+      "sha": "030729b7932cff6b912dc90aa6bcb77ecbf2e72e",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/030729b7932cff6b912dc90aa6bcb77ecbf2e72e"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjUuMy4xMDc3MTAwNg"
+  },
+  {
+    "name": "v2025.3.10691030",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2025.3.10691030",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2025.3.10691030",
+    "commit": {
+      "sha": "3bfc5629ea2b7df9f250308832d30f6c1dcf3817",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/3bfc5629ea2b7df9f250308832d30f6c1dcf3817"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjUuMy4xMDY5MTAzMA"
+  },
+  {
+    "name": "v2025.3.10651008",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2025.3.10651008",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2025.3.10651008",
+    "commit": {
+      "sha": "f0aa3266d96acfafbdd84f9ddca653d2118b30dd",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/f0aa3266d96acfafbdd84f9ddca653d2118b30dd"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjUuMy4xMDY1MTAwOA"
+  },
+  {
+    "name": "v2025.3.10552228",
+    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2025.3.10552228",
+    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2025.3.10552228",
+    "commit": {
+      "sha": "48d6c09f626c50acd5da02054a31b39a2303b103",
+      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/48d6c09f626c50acd5da02054a31b39a2303b103"
+    },
+    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjUuMy4xMDU1MjIyOA"
+  },
+  {
     "name": "v2025.2.0",
     "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2025.2.0",
     "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2025.2.0",
@@ -78,115 +298,5 @@
       "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/01ade22c19d607521c1ae81195d3421657124084"
     },
     "node_id": "REF_kwDOHIRw07NyZWZzL3RhZ3MvdjIwMjMuNC4x"
-  },
-  {
-    "name": "v2023.4.0",
-    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2023.4.0",
-    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2023.4.0",
-    "commit": {
-      "sha": "d07ed21e8dceb452957c12296c20c3c992bae359",
-      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/d07ed21e8dceb452957c12296c20c3c992bae359"
-    },
-    "node_id": "REF_kwDOHIRw07NyZWZzL3RhZ3MvdjIwMjMuNC4w"
-  },
-  {
-    "name": "v2023.3.11731009",
-    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2023.3.11731009",
-    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2023.3.11731009",
-    "commit": {
-      "sha": "81f5cd9625bf045b857deb72ee91fafe21c5bcca",
-      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/81f5cd9625bf045b857deb72ee91fafe21c5bcca"
-    },
-    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjMuMy4xMTczMTAwOQ"
-  },
-  {
-    "name": "v2023.3.11721009",
-    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2023.3.11721009",
-    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2023.3.11721009",
-    "commit": {
-      "sha": "a344cb2fdc79f6304d4c8aeafa6eba54b5db5ceb",
-      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/a344cb2fdc79f6304d4c8aeafa6eba54b5db5ceb"
-    },
-    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjMuMy4xMTcyMTAwOQ"
-  },
-  {
-    "name": "v2023.3.11661016",
-    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2023.3.11661016",
-    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2023.3.11661016",
-    "commit": {
-      "sha": "dd72f3991fed7f5e12ee2e9952b61246e0c05a1b",
-      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/dd72f3991fed7f5e12ee2e9952b61246e0c05a1b"
-    },
-    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjMuMy4xMTY2MTAxNg"
-  },
-  {
-    "name": "v2023.3.11571011",
-    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2023.3.11571011",
-    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2023.3.11571011",
-    "commit": {
-      "sha": "88515c4a94baeecab5a9dadbf4a5e1f5e0786092",
-      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/88515c4a94baeecab5a9dadbf4a5e1f5e0786092"
-    },
-    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjMuMy4xMTU3MTAxMQ"
-  },
-  {
-    "name": "v2023.3.11531008",
-    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2023.3.11531008",
-    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2023.3.11531008",
-    "commit": {
-      "sha": "4a7339fc87021250139dc015f08d0413a54f685e",
-      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/4a7339fc87021250139dc015f08d0413a54f685e"
-    },
-    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjMuMy4xMTUzMTAwOA"
-  },
-  {
-    "name": "v2023.3.11521014",
-    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/v2023.3.11521014",
-    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/v2023.3.11521014",
-    "commit": {
-      "sha": "c29bfb072b7e61a2e96735181df98bebfe076d07",
-      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/c29bfb072b7e61a2e96735181df98bebfe076d07"
-    },
-    "node_id": "REF_kwDOHIRw07pyZWZzL3RhZ3MvdjIwMjMuMy4xMTUyMTAxNA"
-  },
-  {
-    "name": "2023.2.0",
-    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/2023.2.0",
-    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/2023.2.0",
-    "commit": {
-      "sha": "e3e5ad1bbb9724a0a0a528c167437915d669ea87",
-      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/e3e5ad1bbb9724a0a0a528c167437915d669ea87"
-    },
-    "node_id": "REF_kwDOHIRw07JyZWZzL3RhZ3MvMjAyMy4yLjA"
-  },
-  {
-    "name": "2022.6.0",
-    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/2022.6.0",
-    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/2022.6.0",
-    "commit": {
-      "sha": "7b90eff26f0ee0bccbf87dfe541bfeaf51d2140a",
-      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/7b90eff26f0ee0bccbf87dfe541bfeaf51d2140a"
-    },
-    "node_id": "REF_kwDOHIRw07JyZWZzL3RhZ3MvMjAyMi42LjA"
-  },
-  {
-    "name": "2022.4.0",
-    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/2022.4.0",
-    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/2022.4.0",
-    "commit": {
-      "sha": "156078d6c11cccbf5bb0d765dbe947ca8f3302f6",
-      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/156078d6c11cccbf5bb0d765dbe947ca8f3302f6"
-    },
-    "node_id": "REF_kwDOHIRw07JyZWZzL3RhZ3MvMjAyMi40LjA"
-  },
-  {
-    "name": "2022.2.0",
-    "zipball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/zipball/refs/tags/2022.2.0",
-    "tarball_url": "https://api.github.com/repos/microsoft/vscode-black-formatter/tarball/refs/tags/2022.2.0",
-    "commit": {
-      "sha": "6617ccf0bf1073379690253808164c2087567316",
-      "url": "https://api.github.com/repos/microsoft/vscode-black-formatter/commits/6617ccf0bf1073379690253808164c2087567316"
-    },
-    "node_id": "REF_kwDOHIRw07JyZWZzL3RhZ3MvMjAyMi4yLjA"
   }
 ]
