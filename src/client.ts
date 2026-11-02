@@ -1,28 +1,34 @@
 import { ExtensionContext, LanguageClient, LanguageClientOptions, ServerOptions, Uri, workspace } from 'coc.nvim';
 
 import which from 'which';
+import path from 'path';
 
 import { EXTENSION_NS } from './constant';
-import { getBlackLspBlackPath, getBlackLspServerInterpreterPath, getBlackLspServerScriptPath } from './tool';
+import { getBlackLspBlackPath, getBlackLspServerInterpreterPath, getBlackLspServerScriptPath, isMsys2Python, toMsys2Path} from './tool';
 
-export function createLanguageClient(context: ExtensionContext) {
+export async function createLanguageClient(context: ExtensionContext) {
   const devServerInterpreter = workspace.expand(
-    workspace.getConfiguration(EXTENSION_NS).get<string>('dev.serverInterpreter', '')
+    workspace.getConfiguration(EXTENSION_NS).get<string>('dev.serverInterpreter', ''),
   );
   const devServerScript = workspace.expand(
-    workspace.getConfiguration(EXTENSION_NS).get<string>('dev.serverScript', '')
+    workspace.getConfiguration(EXTENSION_NS).get<string>('dev.serverScript', ''),
   );
 
   const serverInterpreter = devServerInterpreter ? devServerInterpreter : getBlackLspServerInterpreterPath(context);
   const serverScript = devServerScript ? devServerScript : getBlackLspServerScriptPath(context);
   if (!serverInterpreter || !serverScript) return;
 
+  const isMsys = await isMsys2Python(serverInterpreter)
+  const normalizePath = (p: string): string => isMsys ? toMsys2Path(p) : path.resolve(p)
+
+  const finalServerScript = normalizePath(serverScript)
+
   const serverOptions: ServerOptions = {
     command: serverInterpreter,
-    args: [serverScript],
+    args: [finalServerScript],
   };
 
-  const initializationOptions = getInitializationOptions(context);
+  const initializationOptions = await getInitializationOptions(context, serverInterpreter, normalizePath);
 
   const clientOptions: LanguageClientOptions = {
     synchronize: {
@@ -70,17 +76,15 @@ function convertFromWorkspaceConfigToInitializationOptions() {
   return initializationOptions;
 }
 
-function getInitializationOptions(context: ExtensionContext) {
+async function getInitializationOptions(context: ExtensionContext, serverInterpreter: string, normalizePath: (p:string) => string) {
   const initializationOptions = convertFromWorkspaceConfigToInitializationOptions();
 
   if (workspace.getConfiguration(EXTENSION_NS).get<boolean>('useDetectBlackCommand')) {
     if (initializationOptions.globalSettings.path.length === 0) {
-      const envToolCommandPath = which.sync('black', { nothrow: true });
-      if (envToolCommandPath) {
-        initializationOptions.globalSettings.path = [envToolCommandPath];
-      } else {
-        const toolPath = getBlackLspBlackPath(context)!;
-        initializationOptions.globalSettings.path = [toolPath];
+      const blackPath = getBlackLspBlackPath(context);
+      if (blackPath) {
+          const normalizeBlackPath = normalizePath(blackPath)
+          initializationOptions.globalSettings.path = [normalizeBlackPath];
       }
     }
   }

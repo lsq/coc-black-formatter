@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {fileURLToPath} from 'node:url'
 
 const FEATCH_URL = 'https://api.github.com/repos/microsoft/vscode-black-formatter/tags';
 const RESOURCE_FILE_NAME = 'vscode-black-formatter-tags.json';
@@ -9,7 +10,7 @@ await (async () => {
   const remoteJson = await res.json();
   const remoteJsonStr = JSON.stringify(remoteJson, null, 2);
 
-  const resourcePath = new URL(`../resources/${RESOURCE_FILE_NAME}`, import.meta.url).pathname;
+  const resourcePath = fileURLToPath(new URL(`../resources/${RESOURCE_FILE_NAME}`, import.meta.url));
   let localJsonStr = await fs.promises.readFile(resourcePath, { encoding: 'utf-8' });
   const localJson = JSON.parse(localJsonStr);
   localJsonStr = JSON.stringify(localJson, null, 2);
